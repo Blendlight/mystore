@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <title>Responsive</title>
+        <style>
+            div
+            {
+                box-sizing: border-box;
+                border: 1px solid black;
+                width: 33.33%;
+                float: left;
+            }
+
+            @media (max-width:780px)
+            {
+                div
+                {
+                    width: 50%;
+                }
+            }
+            
+            @media (max-width:480px)
+            {
+                div
+                {
+                    width: 100%;
+                }
+            }
+            
+            @media (min-width:1100px)
+            {
+                div
+                {
+                    width:33.3%;
+                    padding:0 16%;
+/*                    margin: auto;*/
+                }
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi fuga, aliquam delectus accusantium, quo obcaecati debitis eius, at, numquam eligendi molestias est corporis. Rem hic, pariatur nisi. Eius, ea, illo.</div>
+        <div>some2</div>
+        <div>some3</div>
+    </body>
+</html>

@@ -1,0 +1,77 @@
+.category
+{
+    position: relative;
+}
+
+ul.categories_container {
+    list-style: none;
+}
+
+.category_childs {
+    display: none;
+}
+
+.category_childs.visible{
+    display: block;
+}
+
+.child-toggle
+{
+    position: absolute;
+    left:-16px;
+    top:0;
+}
+
+.img_container
+{
+    position: relative;
+}
+.img_remove
+{
+    position: absolute;
+    top: 0;
+    right: 20px;
+    opacity: .6;    
+    padding: 0 4px;
+    background: white;
+    border-radius: 50%;
+    border:1px solid black;
+    font-size: 21px;
+    font-weight: 700;
+    cursor:pointer;
+    line-height: 1;
+}
+
+.img_to_remove
+{
+    position: relative;
+}
+
+.img_remove:hover
+{
+    opacity: 1;
+}
+
+.img_selector
+{
+    position: absolute;
+    top: 0;
+    right: 20px;
+/*    opacity: .4;*/
+    padding: 0 4px;
+    background: white;
+    border-radius: 50%;
+    border: 1px solid black;
+    font-size: 21px;
+    font-weight: 700;
+    cursor: pointer;
+    line-height: 1;
+}
+
+/*
+.img_selector.selected
+{
+    opacity:1;
+    font-size:25px;
+    color:red;
+}*/
