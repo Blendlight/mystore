@@ -1,5 +1,5 @@
 <?php
-$page_title = "Register account";
+$page_title = "Login account";
 include_once("header.php");
 if($login)
 {
@@ -15,6 +15,21 @@ if(isset($_POST["user_name"], $_POST["user_password"]))
 {
     $user_name = $_POST["user_name"];
     $user_password = $_POST["user_password"];
+//	$q = "
+//                                SELECT 
+//                                    user.*, 
+//                                    role.role_name 
+//                                FROM 
+//                                    `user` 
+//                                    JOIN `role` on user.user_role = role.role_id 
+//                                WHERE 
+//                                    (
+//                                        user.user_uname = '$user_name' || user.user_email = '$user_name'
+//                                    ) && user.user_password = '$user_password'
+//                                LIMIT 1
+//                        ";
+//	echo $q;
+//	exit;
     $query = mysqli_query($conx,"
                                 SELECT 
                                     user.*, 

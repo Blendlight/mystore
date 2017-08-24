@@ -713,12 +713,13 @@ function view_address_form()
 function show_address_select($conx, $uid)
 {
 	$query = mysqli_query($conx, "SELECT * FROM address where address_user='$uid'");
+	$c = 1;
 	if($query && mysqli_num_rows($query)>0)
 	{
 		while($row = mysqli_fetch_array($query))
 		{
 ?>
-<div class="address_container table-bordered">
+<div class="address_container col-md-4">
 	<a href="checkout.php?address=<?= $row["address_id"]?>">
 		<h4><?= $row["address_name"]?></h4>
 		<p><?= $row["address_line1"]?></p>
@@ -729,6 +730,10 @@ function show_address_select($conx, $uid)
 	</p>
 </div>
 <?php
+			if($c++%3 == 0)
+			{
+				echo "<div class='clearfix'></div>";
+			}
 		}
 	}else
 	{

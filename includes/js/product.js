@@ -310,6 +310,7 @@ $(function(){
 	$address_phone	=  $("#address_phone");
 	$address_submit	=  $("#address_submit");
 	$checkout_result = $("#checkout_result");
+	$address_container = $("#addresses_container");
 
 
 
@@ -329,7 +330,7 @@ $(function(){
 		fdata = `address_name=${address_name}&address_line1=${address_line1}&address_line2=${address_line2}&address_city=${address_city}&address_state=${address_state}&address_zip=${address_zip}&address_country=${address_country}&address_phone=${address_phone}&submit=submit&action=address_submit`;
 
 		$.ajax({
-			url:"checkout.php",
+			url:"address_add.php",
 			data:fdata,
 			type:"post",
 			success:function(returned_data)
@@ -337,9 +338,10 @@ $(function(){
 
 				if(returned_data.match(/success:/))
 				{
-					$checkout_result.append($(`<div class='alert alert-success'>${returned_data}</div>`));
+					$checkout_result.append($(`<div class='alert alert-success'>${returned_data}<div class='close' data-dismiss='alert'>&times;</div></div>`));
 					//update address list
 					update_address_list();
+					$address_form.toggleClass("in");
 				}else if(returned_data.match(/fail:/))
 				{
 					$checkout_result.append($(`<div class='alert alert-danger'>${returned_data}</div>`));
@@ -399,7 +401,7 @@ function update_address_list()
 		data:"get_data=address_list",
 		success:function(data_return)
 		{
-			$checkout_result.html(data_return);
+			$address_container.html(data_return);
 		}
 
 	});
